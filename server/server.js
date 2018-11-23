@@ -22,6 +22,5 @@ server.use('/graphql', graphqlHTTP({ //graphql middleware uses the supercharge e
   graphiql: true
 }));
 
-server.listen(4000, () => { //listen to port so we know it's up & running
-  console.log('you are listening for requests on port 4000');
-});
+const port = process.env.PORT || 9000;
+server.listen(port, () => console.log(`Listening on port ${port}`))
