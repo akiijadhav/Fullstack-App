@@ -7,7 +7,7 @@ import BookList from './components/BookList';
 import AddBook from './components/AddBook';
 //apollo client setup
 const client = new ApolloClient({
-  uri:'https://fullstack-mern-apollo-gql.herokuapp.com/graphql'
+  uri:'https://localhost:4000/graphql'
 })
 
 

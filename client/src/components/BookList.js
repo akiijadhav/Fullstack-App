@@ -14,27 +14,27 @@ class BookList extends Component {
     }
   }
   //method
-  displayBooks(){
-    const data = this.props.data;
-    if(data.loading){
-      return( <div>Loading books ...</div>);
-    }else {
-      return data.books.map(book => {
-        return (
-          <li className="mv" key={book.id} onClick={ (e) => {this.setState({ selected: book.id})}}>{book.name}</li>
-        );
-      })
-    }
+  displayBooks() {
+      let data = this.props.data;
+      if (data.loading) {
+          return(<div>Loading books...</div>)
+      } else {
+          return data.books.map(book => {
+              return(
+                  <li key={book.id} onClick={() => this.setState({selected: book.id})}>{book.name}</li>
+              )
+          })
+      }
   }
 
   render() {
     return (
-        <div>
-          <ul id="book-list">
-            {this.displayBooks()}
-          </ul>
-          <BookDetails bookId={this.state.selected}/>
-        </div>
+      <div>
+        <ul id='book-list'>
+          {this.displayBooks()}
+        </ul>
+        <BookDetails bookId={this.state.selected} />
+      </div>
     );
   }
 }
